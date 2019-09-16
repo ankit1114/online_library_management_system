@@ -3,10 +3,10 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 
 if(isset($_POST['update']))
 {
@@ -47,13 +47,13 @@ header('location:manage-categories.php');
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
+    <div class="content-wrapper">
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Edit category</h4>
-                
+
                             </div>
 
 </div>
@@ -63,10 +63,10 @@ header('location:manage-categories.php');
 <div class="panel-heading">
 Category Info
 </div>
- 
+
 <div class="panel-body">
 <form role="form" method="post">
-<?php 
+<?php
 $catid=intval($_GET['catid']);
 $sql="SELECT * from tblcategory where id=:catid";
 $query=$dbh->prepare($sql);
@@ -76,8 +76,8 @@ $results=$query->fetchAll(PDO::FETCH_OBJ);
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{               
-  ?> 
+{
+  ?>
 <div class="form-group">
 <label>Category Name</label>
 <input class="form-control" type="text" name="category" value="<?php echo htmlentities($result->CategoryName);?>" required />
@@ -117,7 +117,7 @@ foreach($results as $result)
                             </div>
 
         </div>
-   
+
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->

@@ -3,10 +3,10 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 
 if(isset($_POST['add']))
 {
@@ -29,7 +29,7 @@ if($lastInsertId)
 $_SESSION['msg']="Book Listed successfully";
 header('location:manage-books.php');
 }
-else 
+else
 {
 $_SESSION['error']="Something went wrong. Please try again";
 header('location:manage-books.php');
@@ -59,13 +59,13 @@ header('location:manage-books.php');
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
+    <div class="content-wrapper">
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Add Book</h4>
-                
+
                             </div>
 
 </div>
@@ -86,7 +86,7 @@ Book Info
 <label> Category<span style="color:red;">*</span></label>
 <select class="form-control" name="category" required="required">
 <option value=""> Select Category</option>
-<?php 
+<?php
 $status=1;
 $sql = "SELECT * from  tblcategory where Status=:status";
 $query = $dbh -> prepare($sql);
@@ -97,9 +97,9 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{               ?>  
+{               ?>
 <option value="<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->CategoryName);?></option>
- <?php }} ?> 
+ <?php }} ?>
 </select>
 </div>
 
@@ -108,7 +108,7 @@ foreach($results as $result)
 <label> Author<span style="color:red;">*</span></label>
 <select class="form-control" name="author" required="required">
 <option value=""> Select Author</option>
-<?php 
+<?php
 
 $sql = "SELECT * from  tblauthors ";
 $query = $dbh -> prepare($sql);
@@ -118,9 +118,9 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{               ?>  
+{               ?>
 <option value="<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->AuthorName);?></option>
- <?php }} ?> 
+ <?php }} ?>
 </select>
 </div>
 
@@ -142,7 +142,7 @@ foreach($results as $result)
                             </div>
 
         </div>
-   
+
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->

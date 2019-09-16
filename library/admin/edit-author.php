@@ -3,10 +3,10 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 
 if(isset($_POST['update']))
 {
@@ -46,13 +46,13 @@ header('location:manage-authors.php');
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
+    <<div class="content-wrapper">
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Add Author</h4>
-                
+
                             </div>
 
 </div>
@@ -66,7 +66,7 @@ Author Info
 <form role="form" method="post">
 <div class="form-group">
 <label>Author Name</label>
-<?php 
+<?php
 $athrid=intval($_GET['athrid']);
 $sql = "SELECT * from  tblauthors where id=:athrid";
 $query = $dbh -> prepare($sql);
@@ -77,7 +77,7 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{               ?>   
+{               ?>
 <input class="form-control" type="text" name="author" value="<?php echo htmlentities($result->AuthorName);?>" required />
 <?php }} ?>
 </div>
@@ -90,7 +90,7 @@ foreach($results as $result)
                             </div>
 
         </div>
-   
+
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->

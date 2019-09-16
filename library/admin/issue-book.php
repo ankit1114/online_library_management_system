@@ -3,10 +3,10 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 
 if(isset($_POST['issue']))
 {
@@ -23,7 +23,7 @@ if($lastInsertId)
 $_SESSION['msg']="Book issued successfully";
 header('location:manage-issued-books.php');
 }
-else 
+else
 {
 $_SESSION['error']="Something went wrong. Please try again";
 header('location:manage-issued-books.php');
@@ -78,7 +78,7 @@ error:function (){}
 });
 }
 
-</script> 
+</script>
 <style type="text/css">
   .others{
     color:red;
@@ -92,18 +92,18 @@ error:function (){}
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
+    <div class="content-wrapper">
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Issue a New Book</h4>
-                
+
                             </div>
 
 </div>
 <div class="row">
-<div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1"">
+<div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1">
 <div class="panel panel-info">
 <div class="panel-heading">
 Issue a New Book
@@ -117,7 +117,7 @@ Issue a New Book
 </div>
 
 <div class="form-group">
-<span id="get_student_name" style="font-size:16px;"></span> 
+<span id="get_student_name" style="font-size:16px;"></span>
 </div>
 
 
@@ -132,7 +132,7 @@ Issue a New Book
  <div class="form-group">
 
   <select  class="form-control" name="bookdetails" id="get_book_name" readonly>
-   
+
  </select>
  </div>
 <button type="submit" name="issue" id="submit" class="btn btn-info">Issue Book </button>
@@ -143,7 +143,7 @@ Issue a New Book
                             </div>
 
         </div>
-   
+
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->

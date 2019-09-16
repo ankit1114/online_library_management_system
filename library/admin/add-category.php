@@ -3,10 +3,10 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 
 if(isset($_POST['create']))
 {
@@ -23,7 +23,7 @@ if($lastInsertId)
 $_SESSION['msg']="Brand Listed successfully";
 header('location:manage-categories.php');
 }
-else 
+else
 {
 $_SESSION['error']="Something went wrong. Please try again";
 header('location:manage-categories.php');
@@ -53,13 +53,13 @@ header('location:manage-categories.php');
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
+    <div class="content-wrapper">
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Add category</h4>
-                
+
                             </div>
 
 </div>
@@ -97,7 +97,7 @@ Category Info
                             </div>
 
         </div>
-   
+
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->

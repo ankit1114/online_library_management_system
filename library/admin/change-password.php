@@ -1,12 +1,12 @@
-<?php
+ <?php
 session_start();
 include('includes/config.php');
 error_reporting(0);
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 if(isset($_POST['change']))
   {
 $password=md5($_POST['password']);
@@ -28,7 +28,7 @@ $chngpwd1->execute();
 $msg="Your Password succesfully changed";
 }
 else {
-$error="Your current password is wrong";  
+$error="Your current password is wrong";
 }
 }
 
@@ -92,9 +92,9 @@ return true;
 <h4 class="header-line">User Change Password</h4>
 </div>
 </div>
- <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>            
-<!--LOGIN PANEL START-->           
+ <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
+        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+<!--LOGIN PANEL START-->
 <div class="row">
 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" >
 <div class="panel panel-info">
@@ -119,15 +119,15 @@ Change Password
 <input class="form-control"  type="password" name="confirmpassword" autocomplete="off" required  />
 </div>
 
- <button type="submit" name="change" class="btn btn-info">Chnage </button> 
+ <button type="submit" name="change" class="btn btn-info">Chnage </button>
 </form>
  </div>
 </div>
 </div>
-</div>  
-<!---LOGIN PABNEL END-->            
-             
- 
+</div>
+<!---LOGIN PABNEL END-->
+
+
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->

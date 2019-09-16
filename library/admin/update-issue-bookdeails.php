@@ -3,10 +3,10 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-    {   
+    {
 header('location:index.php');
 }
-else{ 
+else{
 
 if(isset($_POST['return']))
 {
@@ -74,7 +74,7 @@ error:function (){}
 });
 }
 
-</script> 
+</script>
 <style type="text/css">
   .others{
     color:red;
@@ -88,13 +88,13 @@ error:function (){}
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
+    <div class="content-wrapper">
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Issued Book Details</h4>
-                
+
                             </div>
 
 </div>
@@ -106,7 +106,7 @@ Issued Book Details
 </div>
 <div class="panel-body">
 <form role="form" method="post">
-<?php 
+<?php
 $rid=intval($_GET['rid']);
 $sql = "SELECT tblstudents.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.id as rid,tblissuedbookdetails.fine,tblissuedbookdetails.RetrunStatus from  tblissuedbookdetails join tblstudents on tblstudents.StudentId=tblissuedbookdetails.StudentId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId where tblissuedbookdetails.id=:rid";
 $query = $dbh -> prepare($sql);
@@ -117,8 +117,8 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{               ?>                                      
-                   
+{               ?>
+
 
 
 
@@ -159,7 +159,7 @@ foreach($results as $result)
 
 <div class="form-group">
 <label>Fine (in USD) :</label>
-<?php 
+<?php
 if($result->fine=="")
 {?>
 <input class="form-control" type="text" name="fine" id="fine"  required />
@@ -182,7 +182,7 @@ echo htmlentities($result->fine);
                             </div>
 
         </div>
-   
+
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->
